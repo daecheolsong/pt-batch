@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.*;
 @DataJpaTest
 @Import(PackageRepositoryTest.TestJpaConfig.class)
 @ActiveProfiles("test")
-class PackageRepositoryTest {
+public class PackageRepositoryTest {
     private final PackageRepository packageRepository;
 
     public PackageRepositoryTest(@Autowired PackageRepository packageRepository) {
