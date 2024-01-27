@@ -52,3 +52,14 @@ CREATE TABLE `user`
     `modified_at` timestamp            DEFAULT NULL COMMENT '수정 일시',
     PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='사용자';
+
+CREATE TABLE `user_group_mapping`
+(
+    `user_group_id`   varchar(20) NOT NULL COMMENT '사용자 그룹 ID',
+    `user_id`         varchar(20) NOT NULL COMMENT '사용자 ID',
+    `user_group_name` varchar(50) NOT NULL COMMENT '사용자 그룹 이름',
+    `description`     varchar(50) NOT NULL COMMENT '설명',
+    `created_at`      timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성 일시',
+    `modified_at`     timestamp            DEFAULT NULL COMMENT '수정 일시',
+    PRIMARY KEY (`user_group_id`, `user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='사용자 그룹 매핑';
