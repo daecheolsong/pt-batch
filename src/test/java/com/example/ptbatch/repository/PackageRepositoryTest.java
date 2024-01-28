@@ -1,5 +1,6 @@
 package com.example.ptbatch.repository;
 
+import com.example.ptbatch.config.TestJpaConfig;
 import com.example.ptbatch.repository.packze.Package;
 import com.example.ptbatch.repository.packze.PackageRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @Slf4j
 @DataJpaTest
-@Import(PackageRepositoryTest.TestJpaConfig.class)
+@Import(TestJpaConfig.class)
 @ActiveProfiles("test")
 public class PackageRepositoryTest {
     private final PackageRepository packageRepository;
@@ -89,14 +90,6 @@ public class PackageRepositoryTest {
 
         assertThat(packageRepository.count()).isEqualTo(previousCount - 1);
         assertThat(packageRepository.existsById(removeEntity.getPackageSeq())).isFalse();
-    }
-
-
-
-    @TestConfiguration
-    @EnableJpaAuditing
-    public static class TestJpaConfig {
-
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.ptbatch.job;
 
 import com.example.ptbatch.config.TestBatchConfig;
+import com.example.ptbatch.config.TestJpaConfig;
 import com.example.ptbatch.repository.PackageRepositoryTest;
 import com.example.ptbatch.repository.pass.Pass;
 import com.example.ptbatch.repository.pass.PassRepository;
@@ -34,7 +35,7 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBatchTest
 @ActiveProfiles("test")
 @SpringBootTest
-@ContextConfiguration(classes = {TestBatchConfig.class, ExpirePassesJobConfig.class})
+@ContextConfiguration(classes = {TestBatchConfig.class, ExpirePassesJobConfig.class, TestJpaConfig.class})
 class ExpirePassesJobConfigTest {
     @Autowired
     private JobLauncherTestUtils jobLauncherTestUtils;
