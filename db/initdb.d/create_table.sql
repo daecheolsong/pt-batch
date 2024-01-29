@@ -85,3 +85,16 @@ CREATE TABLE `bulk_pass`
     `modified_at`     timestamp            DEFAULT NULL COMMENT '수정 일시',
     PRIMARY KEY (`bulk_pass_seq`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='대량 이용권, 다수의 이용자에게 이용권을 지급하기 위함';
+
+CREATE TABLE `notification`
+(
+    `notification_seq` int           NOT NULL AUTO_INCREMENT COMMENT '알람 순번',
+    `uuid`             varchar(20)   NOT NULL COMMENT '사용자 uuid (카카오톡)',
+    `event`            varchar(10)   NOT NULL COMMENT '이벤트',
+    `text`             varchar(1000) NOT NULL COMMENT '알람 내용',
+    `sent`             tinyint(1)    NOT NULL DEFAULT '0' COMMENT '발송 여부',
+    `sent_at`          timestamp              DEFAULT NULL COMMENT '발송 일시',
+    `created_at`       timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성 일시',
+    `modified_at`      timestamp              DEFAULT NULL COMMENT '수정 일시',
+    PRIMARY KEY (`notification_seq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='알람';

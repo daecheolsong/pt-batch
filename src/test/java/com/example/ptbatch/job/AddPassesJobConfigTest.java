@@ -18,6 +18,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -55,7 +56,7 @@ public class AddPassesJobConfigTest {
         final String userName = "test-" + RandomStringUtils.randomAlphabetic(10);
 
 
-        User user = User.of(userId, userName, UserStatus.ACTIVE, "010-xxx-xxxx", "test metadata");
+        User user = User.of(userId, userName, UserStatus.ACTIVE, "010-xxx-xxxx", Map.of());
         userRepository.save(user);
 
         UserGroup userGroup = UserGroup.of(userGroupId, "test-group", "test-description");

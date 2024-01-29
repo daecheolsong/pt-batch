@@ -1,12 +1,16 @@
 package com.example.ptbatch.repository.user;
 
 import com.example.ptbatch.repository.BaseEntity;
+import com.vladmihalcea.hibernate.type.json.JsonType;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
+import java.util.Map;
 
 /**
  * @author daecheol song
@@ -16,6 +20,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "user")
+@TypeDef(name = "json", typeClass = JsonType.class)
 public class User extends BaseEntity {
 
     @Id
@@ -27,10 +32,16 @@ public class User extends BaseEntity {
     private UserStatus status;
     @Setter
     private String phone;
-    @Setter
-    private String meta;
 
-    private User(String userId, String userName, UserStatus status, String phone, String meta) {
+    @Type(type = "json")
+    @Setter
+    private Map<String, Object> meta;
+
+    public String getUUID() {
+        return meta.containsKey("uuid") ? String.valueOf(meta.get("uuid")) : null;
+    }
+
+    private User(String userId, String userName, UserStatus status, String phone, Map<String, Object> meta) {
         this.userId = userId;
         this.userName = userName;
         this.status = status;
@@ -38,7 +49,7 @@ public class User extends BaseEntity {
         this.meta = meta;
     }
 
-    public static User of(String userId, String userName, UserStatus status, String phone, String meta) {
+    public static User of(String userId, String userName, UserStatus status, String phone, Map<String, Object> meta) {
         return new User(userId, userName, status, phone, meta);
     }
 }
