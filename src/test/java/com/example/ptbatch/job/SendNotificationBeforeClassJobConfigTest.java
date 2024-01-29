@@ -4,6 +4,7 @@ import com.example.ptbatch.adapter.message.KakaoTalkMessageAdapter;
 import com.example.ptbatch.config.KakaoMessageConfig;
 import com.example.ptbatch.config.TestBatchConfig;
 import com.example.ptbatch.config.TestJpaConfig;
+import com.example.ptbatch.config.WebClientConfig;
 import com.example.ptbatch.repository.booking.Booking;
 import com.example.ptbatch.repository.booking.BookingRepository;
 import com.example.ptbatch.repository.booking.BookingStatus;
@@ -33,7 +34,7 @@ import static org.assertj.core.api.Assertions.*;
 @ActiveProfiles("test")
 @SpringBootTest(classes = {SendNotificationBeforeClassJobConfig.class,
         TestBatchConfig.class, TestJpaConfig.class, SendNotificationItemWriter.class,
-KakaoMessageConfig.class, KakaoTalkMessageAdapter.class})
+KakaoMessageConfig.class, KakaoTalkMessageAdapter.class, WebClientConfig.class})
 public class SendNotificationBeforeClassJobConfigTest {
 
     @Autowired
