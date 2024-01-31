@@ -4,12 +4,18 @@ spring:
     properties:
       hibernate:
         format_sql: true
-#  test.database.replace: none
+  test.database.replace: none
+  batch:
+    job:
+      enabled: false
 
 logging:
   level:
-    org.hibernate.type.descriptor.sql: trace
-    org.springframework.orm.jpa.JpaTransactionManager: trace
-    org.springframework.orm.jpa.AbstractPlatformTransactionManager: trace
-    org.springframework.transaction.interceptor.TransactionInterceptor: trace
-    org.springframework.transaction.interceptor.TransactionAspectSupport: trace
+#    org.hibernate.type.descriptor.sql: trace
+#    org.hibernate.type.descriptor.sql.BasicBinder : trace
+#    org.springframework.orm.jpa.JpaTransactionManager: trace
+#    org.springframework.orm.jpa.AbstractPlatformTransactionManager: trace
+#    org.springframework.transaction.interceptor.TransactionInterceptor: trace
+#    org.springframework.transaction.interceptor.TransactionAspectSupport: trace
+    org.springframework.batch: trace
+#    org.hibernate.event.internal: trace
