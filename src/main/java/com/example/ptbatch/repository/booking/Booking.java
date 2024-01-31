@@ -64,4 +64,8 @@ public class Booking extends BaseEntity {
         this.user = user;
         this.pass = pass;
     }
+
+    public LocalDateTime getStatisticsAt() {
+        return endedAt.withHour(0).withMinute(0).withSecond(0).withNano(0);
+    }
 }
