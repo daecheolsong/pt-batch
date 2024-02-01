@@ -20,6 +20,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.BDDMockito.*;
 
 @ExtendWith(MockitoExtension.class)
+@SuppressWarnings("unchecked")
 public class AddPassesTaskletTest {
     @Mock
     private StepContribution stepContribution;

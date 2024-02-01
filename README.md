@@ -1,2 +1,3 @@
-# pt-batch
-spring-batch를 활용한 pt 이용권 관리 서비스
+# PT Service Project
+## Project Structure
+[Batch 를 이용한 PT-이용권 관리(pt-batch)](./pt-batch)

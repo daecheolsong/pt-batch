@@ -1,1 +1,3 @@
-rootProject.name = 'pt-batch'
+rootProject.name = 'pt'
+include 'pt-batch'
+include 'pt-web'
