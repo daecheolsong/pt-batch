@@ -1,6 +1,7 @@
 package com.example.ptbatch.repository.pass;
 
 import com.example.ptbatch.repository.BaseEntity;
+import com.example.ptbatch.repository.packze.Package;
 import lombok.*;
 
 import javax.persistence.*;
@@ -37,6 +38,9 @@ public class Pass extends BaseEntity {
     @Setter
     private LocalDateTime expiredAt;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "packageSeq", insertable = false, updatable = false)
+    private Package packaze;
 
     private Pass(Integer packageSeq, String userId, PassStatus status, Integer remainingCount,
                 LocalDateTime startedAt, LocalDateTime endedAt, LocalDateTime expiredAt) {
