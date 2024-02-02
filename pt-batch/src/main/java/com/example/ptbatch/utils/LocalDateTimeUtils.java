@@ -18,6 +18,9 @@ public abstract class LocalDateTimeUtils {
     public static final DateTimeFormatter YYYY_MM_DD =
             DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+    public static final DateTimeFormatter MM_DD =
+            DateTimeFormatter.ofPattern("MM-dd");
+
     public static String format(final LocalDateTime localDateTime) {
         return localDateTime.format(YYYY_MM_DD_HH_MM);
     }

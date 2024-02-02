@@ -1,6 +1,7 @@
 package com.example.ptbatch.repository.pass;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,4 +13,6 @@ import java.util.List;
 public interface BulkPassRepository extends JpaRepository<BulkPass, Integer> {
 
     List<BulkPass> findByStatusAndStartedAtGreaterThan(BulkPassStatus status, LocalDateTime startedAt);
+
+    List<BulkPass> findAllByOrderByStartedAtDesc();
 }

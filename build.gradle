@@ -62,7 +62,3 @@ subprojects {
         testAnnotationProcessor 'org.projectlombok:lombok'
     }
 }
-
-jar {
-    enabled = false
-}

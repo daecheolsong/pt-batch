@@ -19,4 +19,6 @@ import java.util.List;
 public interface PackageRepository extends JpaRepository<Package, Integer> {
     List<Package> findByCreatedAtAfter(LocalDateTime dateTime, Pageable pageable);
 
+    List<Package> findAllByOrderByPackageName();
+
 }
