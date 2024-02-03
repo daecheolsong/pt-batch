@@ -27,3 +27,6 @@ VALUES ('HANBADA', 'A1000000', '2022-08-01 00:00:00'),
        ('HANBADA', 'B1000010', '2022-08-01 00:00:00'),
        ('HANBADA', 'B2000000', '2022-08-01 00:00:00'),
        ('TAESAN', 'B2000001', '2022-08-01 00:00:00');
+
+INSERT INTO `bulk_pass`(package_seq, user_group_id, status, count, started_at, ended_at, created_at, modified_at)
+VALUES (1, 'HANBADA', 'READY', 10, now(), date_add(now(), interval 60 day), now(), now());
