@@ -4,6 +4,8 @@ import com.example.ptbatch.repository.user.User;
 import com.example.ptbatch.repository.user.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.thymeleaf.expression.Strings;
+import org.thymeleaf.util.StringUtils;
 
 /**
  * @author daecheol song
@@ -26,7 +28,7 @@ public class UserDto {
                 entity.getUserName(),
                 entity.getStatus(),
                 entity.getPhone(),
-                entity.getMeta().toString()
+                entity.getMeta() == null ? "" : entity.getMeta().toString()
         );
     }
 }

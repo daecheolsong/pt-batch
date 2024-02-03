@@ -1,0 +1,7 @@
+### 이용권 지급
+POST http://localhost:8081/job/launcher
+Content-Type: application/json
+
+{
+  "name": "addPassesJob"
+}
