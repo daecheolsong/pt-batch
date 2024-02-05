@@ -4,4 +4,4 @@
 - [PT 이용권 뷰 관리(pt-web)](./pt-web)
 
 ## ERD
-<img src="./document/pt-batch.svg" width="400px">
+<img src="./document/pt-batch.svg">
